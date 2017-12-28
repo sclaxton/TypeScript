@@ -1,0 +1,18 @@
+=== tests/cases/compiler/staticClassInitializerUseEnumMemberBeforeDeclaration.ts ===
+class Foo {
+>Foo : Symbol(Foo, Decl(staticClassInitializerUseEnumMemberBeforeDeclaration.ts, 0, 0))
+
+    public static bar = Bar.A;
+>bar : Symbol(Foo.bar, Decl(staticClassInitializerUseEnumMemberBeforeDeclaration.ts, 0, 11))
+>Bar.A : Symbol(Bar.A, Decl(staticClassInitializerUseEnumMemberBeforeDeclaration.ts, 4, 17))
+>Bar : Symbol(Bar, Decl(staticClassInitializerUseEnumMemberBeforeDeclaration.ts, 2, 1))
+>A : Symbol(Bar.A, Decl(staticClassInitializerUseEnumMemberBeforeDeclaration.ts, 4, 17))
+}
+
+export enum Bar {
+>Bar : Symbol(Bar, Decl(staticClassInitializerUseEnumMemberBeforeDeclaration.ts, 2, 1))
+
+    A
+>A : Symbol(Bar.A, Decl(staticClassInitializerUseEnumMemberBeforeDeclaration.ts, 4, 17))
+}
+

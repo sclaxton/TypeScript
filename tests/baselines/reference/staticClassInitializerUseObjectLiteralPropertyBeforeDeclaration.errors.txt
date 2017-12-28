@@ -1,0 +1,17 @@
+tests/cases/compiler/staticClassInitializerUseObjectLiteralPropertyBeforeDeclaration.ts(2,25): error TS2448: Block-scoped variable 'Bar' used before its declaration.
+tests/cases/compiler/staticClassInitializerUseObjectLiteralPropertyBeforeDeclaration.ts(2,29): error TS2448: Block-scoped variable 'A' used before its declaration.
+
+
+==== tests/cases/compiler/staticClassInitializerUseObjectLiteralPropertyBeforeDeclaration.ts (2 errors) ====
+    class Foo {
+        public static bar = Bar.A;
+                            ~~~
+!!! error TS2448: Block-scoped variable 'Bar' used before its declaration.
+                                ~
+!!! error TS2448: Block-scoped variable 'A' used before its declaration.
+    }
+    
+    const Bar = {
+        A: 0
+    };
+    

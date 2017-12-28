@@ -1,0 +1,18 @@
+=== tests/cases/compiler/staticClassInitializerUseEnumMemberBeforeDeclaration.ts ===
+class Foo {
+>Foo : Foo
+
+    public static bar = Bar.A;
+>bar : Bar
+>Bar.A : Bar
+>Bar : typeof Bar
+>A : Bar
+}
+
+export enum Bar {
+>Bar : Bar
+
+    A
+>A : Bar
+}
+

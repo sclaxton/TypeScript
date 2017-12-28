@@ -1,0 +1,19 @@
+=== tests/cases/compiler/staticClassInitializerUseObjectLiteralPropertyBeforeDeclaration.ts ===
+class Foo {
+>Foo : Symbol(Foo, Decl(staticClassInitializerUseObjectLiteralPropertyBeforeDeclaration.ts, 0, 0))
+
+    public static bar = Bar.A;
+>bar : Symbol(Foo.bar, Decl(staticClassInitializerUseObjectLiteralPropertyBeforeDeclaration.ts, 0, 11))
+>Bar.A : Symbol(A, Decl(staticClassInitializerUseObjectLiteralPropertyBeforeDeclaration.ts, 4, 13))
+>Bar : Symbol(Bar, Decl(staticClassInitializerUseObjectLiteralPropertyBeforeDeclaration.ts, 4, 5))
+>A : Symbol(A, Decl(staticClassInitializerUseObjectLiteralPropertyBeforeDeclaration.ts, 4, 13))
+}
+
+const Bar = {
+>Bar : Symbol(Bar, Decl(staticClassInitializerUseObjectLiteralPropertyBeforeDeclaration.ts, 4, 5))
+
+    A: 0
+>A : Symbol(A, Decl(staticClassInitializerUseObjectLiteralPropertyBeforeDeclaration.ts, 4, 13))
+
+};
+

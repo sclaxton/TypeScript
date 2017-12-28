@@ -1,0 +1,18 @@
+=== tests/cases/compiler/staticClassInitializerUseNamespacePropertyBeforeDeclaration.ts ===
+class Foo {
+>Foo : Symbol(Foo, Decl(staticClassInitializerUseNamespacePropertyBeforeDeclaration.ts, 0, 0))
+
+    public static bar = Bar.A;
+>bar : Symbol(Foo.bar, Decl(staticClassInitializerUseNamespacePropertyBeforeDeclaration.ts, 0, 11))
+>Bar.A : Symbol(Bar.A, Decl(staticClassInitializerUseNamespacePropertyBeforeDeclaration.ts, 5, 14))
+>Bar : Symbol(Bar, Decl(staticClassInitializerUseNamespacePropertyBeforeDeclaration.ts, 2, 1))
+>A : Symbol(Bar.A, Decl(staticClassInitializerUseNamespacePropertyBeforeDeclaration.ts, 5, 14))
+}
+
+namespace Bar {
+>Bar : Symbol(Bar, Decl(staticClassInitializerUseNamespacePropertyBeforeDeclaration.ts, 2, 1))
+
+    export let A = 0
+>A : Symbol(A, Decl(staticClassInitializerUseNamespacePropertyBeforeDeclaration.ts, 5, 14))
+}
+

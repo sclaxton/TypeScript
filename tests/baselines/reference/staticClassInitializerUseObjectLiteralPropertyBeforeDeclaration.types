@@ -1,0 +1,21 @@
+=== tests/cases/compiler/staticClassInitializerUseObjectLiteralPropertyBeforeDeclaration.ts ===
+class Foo {
+>Foo : Foo
+
+    public static bar = Bar.A;
+>bar : number
+>Bar.A : number
+>Bar : { A: number; }
+>A : number
+}
+
+const Bar = {
+>Bar : { A: number; }
+>{    A: 0} : { A: number; }
+
+    A: 0
+>A : number
+>0 : 0
+
+};
+
