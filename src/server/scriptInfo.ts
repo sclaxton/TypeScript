@@ -261,6 +261,7 @@ namespace ts.server {
         }
 
         public getSnapshot() {
+            // Transform hbsx files here
             return this.textStorage.getSnapshot();
         }
 
